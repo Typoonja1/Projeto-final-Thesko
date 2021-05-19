@@ -24,7 +24,7 @@ void verificarGanhador(int ganhador, char matriz[][4]){
     }
 }
 
-void jogar(nlinha, ncoluna, jogador){
+void jogar(int nlinha, int ncoluna, char simbolo){
 
 }
 
