@@ -93,7 +93,20 @@ void verificarGanhador(int *ganhador, char matriz[][4])
                     diagonalP2++;
                 }
             }
+
+            if(j == 3-i+1){
+                if (matriz[i][j] == 'X')
+                {
+                    diagonalS1++;
+                }
+
+                if (matriz[i][j] == 'O')
+                {
+                    diagonalS2++;
+                }
+            }
         }
+
         if (linha1 == 3 || diagonalP1 == 3 || diagonalS1 == 3 || coluna1 == 3)
         {
             *ganhador = 1;
