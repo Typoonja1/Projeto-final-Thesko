@@ -116,11 +116,11 @@ void verificarGanhador(int *ganhador, char matriz[][4])
 int main()
 {
 
-    int jogo = 1, final = 1;
+    int jogo = 1;
 
     while (jogo)
     {
-        int ganhador = 0, rodadas = 0;
+        int ganhador = 0, rodadas = 0, final = 1;
         char joguinho[4][4], opcao;
 
         for (int i = 0; i < 4; i++)
@@ -149,20 +149,25 @@ int main()
         while (ganhador == 0)
         {
 
-            if (ganhador != 2)
+            if (ganhador == 0)
             {
                 verificacao(1, joguinho);
 
                 verificarGanhador(&ganhador, joguinho);
             }
+                rodadas++;
+            if (rodadas >= 9)
+            {
+                ganhador = 3;
+            }
 
-            if (ganhador != 1)
+            if (ganhador == 0)
             {
                 verificacao(2, joguinho);
 
                 verificarGanhador(&ganhador, joguinho);
             }
-            rodadas++;
+                rodadas++;
             if (rodadas >= 9)
             {
                 printf("Empate\n");
